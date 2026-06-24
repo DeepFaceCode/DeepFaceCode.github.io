@@ -14,11 +14,8 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 8% 8%, rgba(36, 87, 214, .13), transparent 34%),
-    radial-gradient(circle at 92% 18%, rgba(240, 111, 47, .13), transparent 30%),
-    linear-gradient(180deg, #fff, var(--paper));
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fff;
+  font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -31,10 +28,11 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(var(--max), calc(100% - 48px));
+  width: min(1060px, calc(100% - 48px));
   margin: 0 auto;
   padding: 22px 0;
   backdrop-filter: blur(14px);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .brand {
@@ -48,14 +46,17 @@ nav { display: flex; gap: 24px; color: #344054; font-size: 13px; }
 nav a:hover, footer a:hover { color: var(--blue); }
 
 .hero {
-  width: min(var(--max), calc(100% - 48px));
-  min-height: 76vh;
+  width: min(1060px, calc(100% - 48px));
+  min-height: auto;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  gap: 46px;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 40px;
   align-items: center;
-  padding: 64px 0 88px;
+  padding: 30px 42px 42px;
+  border-radius: 18px;
+  background: #f7f8fa;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, .08);
 }
 
 .hero > *, .project-grid > * { min-width: 0; }
@@ -68,11 +69,11 @@ nav a:hover, footer a:hover { color: var(--blue); }
   letter-spacing: .12em;
 }
 
-h1, h2, h3 { margin: 0; letter-spacing: -.055em; }
+h1, h2, h3 { margin: 0; letter-spacing: -.045em; }
 h1, h2, h3, .eyebrow, .summary, .research-line { overflow-wrap: anywhere; }
-h1 { max-width: 760px; font-size: clamp(44px, 6vw, 76px); line-height: .92; }
-h2 { font-size: clamp(30px, 4.4vw, 54px); line-height: 1; }
-h3 { font-size: 34px; line-height: 1; }
+h1 { max-width: 760px; font-family: Inter, system-ui, sans-serif; font-size: clamp(48px, 5.4vw, 62px); line-height: 1; font-weight: 800; color: #09111f; }
+h2 { font-family: Inter, system-ui, sans-serif; font-size: clamp(30px, 4.4vw, 50px); line-height: 1; }
+h3 { font-family: Inter, system-ui, sans-serif; font-size: 30px; line-height: 1; }
 
 .summary {
   max-width: 650px;
@@ -109,7 +110,14 @@ h3 { font-size: 34px; line-height: 1; }
   border-color: var(--ink);
 }
 
-.profile-copy h1 { margin-top: 18px; }
+.profile-copy h1 { margin-top: 0; }
+
+.intro-line {
+  margin: 24px 0 0;
+  color: #020617;
+  font-size: 18px;
+  line-height: 1.8;
+}
 
 .research-line {
   max-width: 760px;
@@ -126,32 +134,34 @@ h3 { font-size: 34px; line-height: 1; }
 
 .about-me {
   max-width: 760px;
-  margin-top: 30px;
-  padding: 26px 28px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.76);
-  box-shadow: 0 20px 60px rgba(17, 24, 39, .06);
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .about-me p:not(.eyebrow) {
   margin: 16px 0 0;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 15px;
+  color: #020617;
+  line-height: 1.82;
+  font-size: 18px;
+}
+
+.about-me span {
+  color: #0b57d0;
 }
 
 .profile-photo {
   justify-self: center;
   margin: 0;
-  width: min(390px, 78vw);
+  width: min(260px, 70vw);
   aspect-ratio: 1;
   border-radius: 50%;
-  padding: 12px;
-  border: 1px solid rgba(36,87,214,.18);
-  background:
-    linear-gradient(135deg, rgba(36,87,214,.12), rgba(240,111,47,.12)),
-    #fff;
-  box-shadow: 0 30px 90px rgba(17, 24, 39, .14);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .profile-photo img {
@@ -159,7 +169,7 @@ h3 { font-size: 34px; line-height: 1; }
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 1px solid var(--line);
+  border: 0;
 }
 
 .hero-panel {
@@ -192,10 +202,11 @@ h3 { font-size: 34px; line-height: 1; }
 }
 
 .section {
-  width: min(var(--max), calc(100% - 48px));
+  width: min(1060px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 96px 0;
-  border-top: 1px solid var(--line);
+  padding: 70px 0 80px;
+  border-top: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .section-title {
@@ -214,7 +225,7 @@ h3 { font-size: 34px; line-height: 1; }
 .section-title h2 { margin-top: 12px; max-width: 720px; }
 
 .projects-heading {
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .projects-heading h2 {
@@ -231,7 +242,7 @@ h3 { font-size: 34px; line-height: 1; }
   min-width: 0;
   display: flex;
   flex-direction: column;
-  min-height: 560px;
+  min-height: 500px;
   border: 1px solid var(--line);
   background: #fff;
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
@@ -303,7 +314,7 @@ h3 { font-size: 34px; line-height: 1; }
 .note a { color: var(--blue); font-weight: 800; }
 
 footer {
-  width: min(var(--max), calc(100% - 48px));
+  width: min(1060px, calc(100% - 48px));
   margin: 0 auto;
   padding: 30px 0 48px;
   display: grid;
@@ -312,6 +323,7 @@ footer {
   color: var(--muted);
   font-size: 12px;
   border-top: 1px solid var(--line);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 footer p { margin: 0; }
@@ -320,7 +332,7 @@ footer p:last-child { text-align: right; }
 
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .profile-photo { order: -1; width: min(330px, 76vw); }
+  .profile-photo { order: -1; width: min(260px, 76vw); }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-card { min-height: 0; }
   .project-card figure { height: 300px; }
@@ -329,9 +341,9 @@ footer p:last-child { text-align: right; }
 @media (max-width: 620px) {
   .site-header, .hero, .section, footer { width: min(100% - 32px, var(--max)); }
   nav { gap: 14px; font-size: 12px; }
-  .hero { padding: 46px 0 72px; }
-  h1 { font-size: clamp(40px, 13vw, 58px); }
-  .about-me { padding: 22px; }
+  .hero { padding: 28px 22px 34px; border-radius: 16px; }
+  h1 { font-size: clamp(42px, 15vw, 58px); }
+  .intro-line, .about-me p:not(.eyebrow) { font-size: 16px; line-height: 1.78; }
   .hero-panel { grid-template-columns: 1fr; padding: 16px; }
   .hero-panel span { min-height: 74px; }
   .section { padding: 70px 0; }
